@@ -15,11 +15,11 @@ public class TransferenciaService {
     private final TransferenciaRepository repository;
 
     private static final Map<Long, BigDecimal> TAXAS = Map.of(
-            0L, BigDecimal.valueOf(0.025), // 2.5% + taxa fixa de 3.00
-            11L, BigDecimal.valueOf(0.082), // 8.2% do valor
-            21L, BigDecimal.valueOf(0.069), // 6.9% do valor
-            31L, BigDecimal.valueOf(0.047), // 4.7% do valor
-            41L, BigDecimal.valueOf(0.017)  // 1.7% do valor
+            0L, BigDecimal.valueOf(0.025),
+            11L, BigDecimal.valueOf(0.082),
+            21L, BigDecimal.valueOf(0.069),
+            31L, BigDecimal.valueOf(0.047),
+            41L, BigDecimal.valueOf(0.017)
     );
 
     public Transferencia agendarTransferencia(Transferencia transferencia) {
@@ -42,7 +42,6 @@ public class TransferenciaService {
             return BigDecimal.valueOf(12.00);
         }
 
-        // Garante que a taxa correta é aplicada ao intervalo correto
         for (Map.Entry<Long, BigDecimal> entry : TAXAS.entrySet()) {
             long inicioIntervalo = entry.getKey();
             long fimIntervalo = inicioIntervalo + 9;
@@ -52,7 +51,7 @@ public class TransferenciaService {
             }
         }
 
-        return null; // Caso os dias ultrapassem 50, será inválido
+        return null;
     }
 
     public List<Transferencia> listarTransferencias() {

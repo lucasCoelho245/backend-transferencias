@@ -12,7 +12,7 @@ API para o funcionamento do front-end de agendamento de transferências bancári
 
 1. Clone o repositório para sua máquina local.
     ```bash
-    git clone https://github.com/seu-usuario/transferencias-api.git
+    git clone https://github.com/lucasCoelho245/backend-transferencias.git
     ```
 
 2. Navegue até o diretório do projeto.
