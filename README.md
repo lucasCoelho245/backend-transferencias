@@ -29,13 +29,9 @@ API para o funcionamento do front-end de agendamento de transferências bancári
     ```bash
     mvn spring-boot:run
     ```
-5. Link do swagger
-    ```bash
-    http://localhost:8081/swagger-ui/index.html
-    ```
 ## Uso
 
-A API estará disponível em `http://localhost:8081`. Você pode utilizar ferramentas como Postman ou cURL para interagir com a API.
+A  API estará disponível em `http://localhost:8081` e o link do swagger em `http://localhost:8081/swagger-ui/index.html`. Você pode utilizar ferramentas como Postman ou cURL para interagir com a API.
 
 ### Endpoints Principais
 
