@@ -17,7 +17,7 @@ API para o funcionamento do front-end de agendamento de transferências bancári
 
 2. Navegue até o diretório do projeto.
     ```bash
-    cd transferencias-api
+    cd backend-transferencias
     ```
 
 3. Compile o projeto e baixe as dependências.
