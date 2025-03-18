@@ -36,16 +36,14 @@ public class TransferenciaInvalidaExceptionTest {
         transferencia.setContaOrigem("1234567890");
         transferencia.setContaDestino("0987654321");
         transferencia.setValor(BigDecimal.valueOf(1000));
-        transferencia.setDataTransferencia(LocalDate.now().plusDays(60));  // Fora da tabela (sem taxa aplicável)
+        transferencia.setDataTransferencia(LocalDate.now().plusDays(60));
         transferencia.setDataAgendamento(LocalDate.now());
     }
 
     @Test
     public void testTransferenciaInvalida() {
-        // Simular que não há taxa aplicável
         when(taxaCalculator.calcularTaxa(anyLong(), any(BigDecimal.class))).thenReturn(null);
 
-        // Verificar se a exceção TransferenciaInvalidaException é lançada
         assertThrows(TransferenciaInvalidaException.class, () -> transferenciaService.agendarTransferencia(transferencia));
     }
 }

@@ -35,9 +35,8 @@ public class TransferenciaService {
         return repository.save(transferencia);
     }
 
-    // Método para listar todas as transferências
     public List<Transferencia> listarTransferencias() {
         log.info("Listando todas as transferências");
-        return repository.findAll();  // Recupera todas as transferências do banco de dados
+        return repository.findAll();
     }
 }

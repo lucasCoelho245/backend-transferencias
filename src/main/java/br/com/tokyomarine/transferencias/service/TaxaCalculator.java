@@ -32,6 +32,6 @@ public class TaxaCalculator {
         if (dias >= 41 && dias <= 50) {
             return valor.multiply(TAXA_1_7_PERCENTO);
         }
-        return null; // Nenhuma taxa aplicável
+        return null;
     }
 }

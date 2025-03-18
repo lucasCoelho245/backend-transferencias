@@ -28,7 +28,6 @@ public class TransferenciaDTO {
     @NotNull(message = "A data de transferência é obrigatória")
     private LocalDate dataTransferencia;
 
-    // Método para converter o DTO em uma entidade Transferencia
     public Transferencia toEntity() {
         Transferencia transferencia = new Transferencia();
         transferencia.setContaOrigem(this.contaOrigem);

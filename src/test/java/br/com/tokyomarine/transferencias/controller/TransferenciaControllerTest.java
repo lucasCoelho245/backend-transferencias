@@ -37,31 +37,27 @@ public class TransferenciaControllerTest {
 
     @Test
     public void testAgendarTransferencia() throws Exception {
-        // Criando o objeto Transferencia para simulação
         Transferencia transferencia = new Transferencia();
         transferencia.setContaOrigem("1234567890");
         transferencia.setContaDestino("0987654321");
         transferencia.setValor(BigDecimal.valueOf(1000));
         transferencia.setDataTransferencia(LocalDate.of(2025, 5, 1));
 
-        // Configurando o comportamento do serviço mockado
         when(transferenciaService.agendarTransferencia(transferencia)).thenReturn(transferencia);
 
-        // Realizando a requisição POST para o endpoint /transferencias
         mockMvc.perform(post("/transferencias")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\"contaOrigem\":\"1234567890\",\"contaDestino\":\"0987654321\",\"valor\":1000,\"dataTransferencia\":\"2025-05-01\"}")
                 )
-                .andExpect(status().isOk())  // Espera que o status da resposta seja 200 OK
+                .andExpect(status().isOk())
                 .andExpect(jsonPath("$.contaOrigem").value("1234567890"))
                 .andExpect(jsonPath("$.contaDestino").value("0987654321"))
-                .andExpect(jsonPath("$.valor").value(1000));  // Verifica se o valor está correto
+                .andExpect(jsonPath("$.valor").value(1000));
     }
 
     @Test
     public void testListarTransferencias() throws Exception {
-        // Teste para garantir que o endpoint de listagem de transferências funcione corretamente
         mockMvc.perform(get("/transferencias"))
-                .andExpect(status().isOk());  // Espera que o status da resposta seja 200 OK
+                .andExpect(status().isOk());
     }
 }
