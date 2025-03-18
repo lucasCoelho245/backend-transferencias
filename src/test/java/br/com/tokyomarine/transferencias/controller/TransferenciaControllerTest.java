@@ -1,11 +1,13 @@
 package br.com.tokyomarine.transferencias.controller;
 
 import br.com.tokyomarine.transferencias.model.Transferencia;
+import br.com.tokyomarine.transferencias.repository.TransferenciaRepository;
 import br.com.tokyomarine.transferencias.service.TransferenciaService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -14,9 +16,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @SpringBootTest
@@ -29,6 +31,8 @@ public class TransferenciaControllerTest {
     private TransferenciaController transferenciaController;
 
     private MockMvc mockMvc;
+
+    private TransferenciaRepository transferenciaRepository;
 
     @BeforeEach
     public void setup() {
@@ -60,4 +64,17 @@ public class TransferenciaControllerTest {
         mockMvc.perform(get("/transferencias"))
                 .andExpect(status().isOk());
     }
+
+    @Test
+    public void testDeletarTransferencia() throws Exception {
+        Long transferenciaId = 1L;
+        doNothing().when(transferenciaService).deleteTransferencia(transferenciaId);
+        mockMvc.perform(delete("/transferencias/{id}", transferenciaId)
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNoContent())
+                .andExpect(content().string(""))
+                .andDo(print());
+        verify(transferenciaService, times(1)).deleteTransferencia(transferenciaId);
+    }
+
 }

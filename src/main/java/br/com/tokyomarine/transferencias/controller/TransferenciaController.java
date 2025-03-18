@@ -38,4 +38,11 @@ public class TransferenciaController {
         log.info("Listando todas as transferências");
         return ResponseEntity.ok(service.listarTransferencias());
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarTransferencia(@PathVariable Long id) {
+        service.deleteTransferencia(id);
+        return ResponseEntity.noContent().build();
+    }
+
 }

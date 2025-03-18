@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.temporal.ChronoUnit;
@@ -38,5 +39,10 @@ public class TransferenciaService {
     public List<Transferencia> listarTransferencias() {
         log.info("Listando todas as transferências");
         return repository.findAll();
+    }
+
+    @Transactional
+    public void deleteTransferencia(Long id) {
+        repository.deleteById(id);
     }
 }

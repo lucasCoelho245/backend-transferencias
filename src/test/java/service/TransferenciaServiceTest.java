@@ -147,4 +147,11 @@ public class TransferenciaServiceTest {
         assertEquals(2, result.size());
         verify(transferenciaRepository, times(1)).findAll();
     }
+    @Test
+    public void testDeletarTransferencia() {
+        Long transferenciaId = 1L;
+        doNothing().when(transferenciaRepository).deleteById(transferenciaId);
+        transferenciaService.deleteTransferencia(transferenciaId);
+        verify(transferenciaRepository, times(1)).deleteById(transferenciaId);
+    }
 }
