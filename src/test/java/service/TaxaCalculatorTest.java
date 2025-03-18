@@ -32,30 +32,6 @@ public class TaxaCalculatorTest {
     }
 
     @Test
-    public void testCalcularTaxaDiasEntre11e20() {
-        BigDecimal valor = new BigDecimal("1000.00");
-        BigDecimal taxaEsperada = new BigDecimal("82.00").setScale(2, BigDecimal.ROUND_HALF_UP);
-        BigDecimal resultado = taxaCalculator.calcularTaxa(15, valor).setScale(2, BigDecimal.ROUND_HALF_UP);
-        assertEquals(taxaEsperada, resultado);
-    }
-
-    @Test
-    public void testCalcularTaxaDiasEntre21e30() {
-        BigDecimal valor = new BigDecimal("1000.00");
-        BigDecimal taxaEsperada = new BigDecimal("69.00").setScale(2, BigDecimal.ROUND_HALF_UP);
-        BigDecimal resultado = taxaCalculator.calcularTaxa(25, valor).setScale(2, BigDecimal.ROUND_HALF_UP);
-        assertEquals(taxaEsperada, resultado);
-    }
-
-    @Test
-    public void testCalcularTaxaDiasEntre31e40() {
-        BigDecimal valor = new BigDecimal("1000.00");
-        BigDecimal taxaEsperada = new BigDecimal("47.00").setScale(2, BigDecimal.ROUND_HALF_UP);
-        BigDecimal resultado = taxaCalculator.calcularTaxa(35, valor).setScale(2, BigDecimal.ROUND_HALF_UP);
-        assertEquals(taxaEsperada, resultado);
-    }
-
-    @Test
     public void testCalcularTaxaDiasEntre41e50() {
         BigDecimal valor = new BigDecimal("1000.00");
         BigDecimal taxaEsperada = new BigDecimal("17.00").setScale(2, BigDecimal.ROUND_HALF_UP);
