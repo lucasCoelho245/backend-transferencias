@@ -38,6 +38,7 @@ A  API estará disponível em `http://localhost:8081` e o link do swagger em `ht
 #### Transferências
 - `POST /transferencias` - Agenda uma nova transferência.
 - `GET /transferencias` - Retorna todas as transferências agendadas.
+- `DELETE /transferencias` - Apaga transferências.
 
 ### Regras de Negócio
 
