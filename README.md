@@ -33,6 +33,14 @@ API para o funcionamento do front-end de agendamento de transferências bancári
 
 A  API estará disponível em `http://localhost:8081` e o link do swagger em `http://localhost:8081/swagger-ui/index.html`. Você pode utilizar ferramentas como Postman ou cURL para interagir com a API.
 
+### Docker
+
+A aplicação possui **Docker** configurado para facilitar a execução em containers.
+
+### CI/CD com GitHub Actions
+
+A automação do **CI/CD** foi configurada com **GitHub Actions**, permitindo a execução de builds automáticos, testes e deploy de forma contínua.
+
 ### Endpoints Principais
 
 #### Transferências
