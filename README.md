@@ -33,6 +33,15 @@ API para o funcionamento do front-end de agendamento de transferências bancári
 
 A  API estará disponível em `http://localhost:8081` e o link do swagger em `http://localhost:8081/swagger-ui/index.html`. Você pode utilizar ferramentas como Postman ou cURL para interagir com a API.
 
+## 🌐 Versão Online
+
+Para quem deseja ver o funcionamento do backend sem precisar configurar o ambiente local, a versão online do serviço está disponível:
+
+- **Backend (versão online)**: [https://indirect-patty-lucascoelho-4d01551b.koyeb.app/transferencias](https://indirect-patty-lucascoelho-4d01551b.koyeb.app/transferencias)
+- **Swagger (documentação da API)**: [https://indirect-patty-lucascoelho-4d01551b.koyeb.app/swagger-ui/index.html](https://indirect-patty-lucascoelho-4d01551b.koyeb.app/swagger-ui/index.html)
+
+Você pode testar os endpoints da API acessando o link acima ou consultar a documentação diretamente no Swagger.
+
 ### Docker
 
 A aplicação possui **Docker** configurado para facilitar a execução em containers.
